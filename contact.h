@@ -20,6 +20,7 @@ public:
     PhoneBook();
     void dodajKontakt(const std::string& firstName, const std::string& lastName, const std::string& phoneNumber);
     void wyswietlKontakt() const;
+    void usonKontakt(int index);
 };
 
 #endif // CONTACT_H

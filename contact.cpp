@@ -25,3 +25,14 @@ void PhoneBook::dodajKontakt(const std::string &firstName, const std::string &la
             }
         }
     }
+void PhoneBook::usonKontakt(int index) {
+    if (index < 0 || index >= numContacts) {
+        std::cout << "Nieprawidlowy indeks!" << std::endl;
+    } else {
+        for (int i = index; i < numContacts - 1; ++i) {
+            contacts[i] = contacts[i + 1];
+        }
+        numContacts--;
+        std::cout << "Kontakt zostal usuniety!" << std::endl;
+    }
+}

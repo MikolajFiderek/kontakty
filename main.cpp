@@ -7,12 +7,14 @@ int main() {
     PhoneBook phoneBook;
     int choice;
     string firstName, lastName, phoneNumber;
+    int index;
 
     do {
         cout << "Menu:" << endl;
         cout << "1. Dodaj kontakt" << endl;
         cout << "2. Wyswietl kontakty" << endl;
-        cout << "3. Wyjscie" << endl;
+        cout << "3. Usun kontakt" << endl;
+        cout << "4. Wyjscie" << endl;
         cout << "Wybierz opcje: ";
         cin >> choice;
 
@@ -30,12 +32,17 @@ int main() {
                 phoneBook.wyswietlKontakt();
                 break;
             case 3:
+                cout << "Podaj numer kontaktu do usuniecia: ";
+                cin >> index;
+                phoneBook.usonKontakt(index - 1);
+                break;
+            case 4:
                 cout << "Wyjscie z programu." << endl;
                 break;
             default:
                 cout << "Nieprawidlowa opcja. Sprobuj ponownie." << endl;
         }
-    } while (choice != 3);
+    } while (choice != 4);
 
     return 0;
 }
